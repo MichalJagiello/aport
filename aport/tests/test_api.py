@@ -7,7 +7,7 @@ from aport.api.app import AportApp
 class AportApiTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.app = AportApp().test_client()
+        self.app = AportApp(test=False).test_client()
 
     def test_api_just_call_methods(self):
         response = self.app.get('/')
